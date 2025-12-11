@@ -1,0 +1,36 @@
+{
+  "name": "arxiv-syndicate",
+  "version": "1.0.0",
+  "description": "The Arxiv Syndicate - Underground research intelligence network",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "npx serve src -p 8000",
+    "dev": "npx live-server src --port=8000",
+    "build": "echo 'No build step required - pure HTML/CSS/JS'",
+    "test": "echo 'Open src/index.html in browser to test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/ArxivSynFire.git"
+  },
+  "keywords": [
+    "arxiv",
+    "research",
+    "intelligence",
+    "ai",
+    "machine-learning",
+    "papers",
+    "syndicate",
+    "pattern-recognition"
+  ],
+  "author": "The Syndicate",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/ArxivSynFire/issues"
+  },
+  "homepage": "https://github.com/yourusername/ArxivSynFire#readme",
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "live-server": "^1.2.2"
+  }
+}
