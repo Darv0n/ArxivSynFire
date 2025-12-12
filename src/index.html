@@ -552,34 +552,80 @@
                         <span class="terminal-dot"></span>
                         <span class="terminal-dot"></span>
                         <span class="terminal-dot"></span>
-                        <span class="terminal-title">syndicate.sh</span>
+                        <span class="terminal-title">terminal</span>
                     </div>
                     <div class="terminal-body">
-                        <div class="terminal-line">
-                            <span class="prompt">$</span>
-                            <span class="command">./activate-syndicate.sh</span>
-                        </div>
                         <div class="terminal-line output">
-                            <span>SYNDICATE INITIALIZED</span>
-                        </div>
-                        <div class="terminal-line output">
-                            <span>CELLS: SCANNER, WEAVER, HYPERLEXIC, ARCHITECT, ORCHESTRA</span>
-                        </div>
-                        <div class="terminal-line output">
-                            <span>STATUS: <span class="status-active">ACTIVE</span></span>
+                            <span class="comment"># Install the Syndicate</span>
                         </div>
                         <div class="terminal-line">
                             <span class="prompt">$</span>
-                            <span class="command typing">Activate THE ARXIV SYNDICATE. Full pipeline. Ship the zine._</span>
+                            <span class="command">git clone https://github.com/Darv0n/ArxivSynFire.git</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command">cd ArxivSynFire && pip install -e .</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command">export ANTHROPIC_API_KEY="sk-ant-..."</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span class="comment"># Run the pipeline</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command typing">syndicate "mechanistic interpretability"</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span>[1/5] SCANNER - Gathering intelligence...</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span>[2/5] WEAVER - Finding correlations...</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span>[3/5] HYPERLEXIC - Seeing through time...</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span>[4/5] ARCHITECT - Mapping paradigms...</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span>[5/5] ORCHESTRA - Synthesizing emergence...</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span class="status-active">THE SYNDICATE HAS SPOKEN.</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="activate-text">
                     <h2>ACTIVATE THE SYNDICATE</h2>
-                    <p>Execute each cell in sequence. Each completes their toolbox work before handoff. THE ORCHESTRA synthesizes emergence from the spaces between. Evidence pack ships with the zine.</p>
-                    <div class="activate-command">
-                        <code>"Activate THE ARXIV SYNDICATE. Full pipeline. Ship the zine."</code>
+                    <p>The Syndicate runs as an autonomous CLI agent. Five cells execute in sequence—each completes their work before handoff. THE ORCHESTRA synthesizes emergence from the spaces between.</p>
+                    <div class="activate-features">
+                        <div class="feature">
+                            <span class="feature-icon">→</span>
+                            <span>Searches ArXiv & Semantic Scholar</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">→</span>
+                            <span>Finds hidden correlations</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">→</span>
+                            <span>Maps to historical patterns</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">→</span>
+                            <span>Ships THE ZINE + Evidence Pack</span>
+                        </div>
+                    </div>
+                    <div class="activate-cta">
+                        <a href="https://github.com/Darv0n/ArxivSynFire" class="cta-button" target="_blank">
+                            <span>VIEW ON GITHUB</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
