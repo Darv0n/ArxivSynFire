@@ -2,6 +2,26 @@
 node_modules/
 package-lock.json
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+*.egg
+.venv/
+venv/
+ENV/
+env/
+.python-version
+
+# Agent workspace (contains runtime data)
+workspace/
+data/
+*.db
+
 # Build outputs
 dist/
 build/

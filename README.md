@@ -104,7 +104,84 @@ The Arxiv Syndicate is an underground research intelligence network that tracks 
 
 ---
 
-## Getting Started
+## The Agent (NEW)
+
+**The Syndicate is now autonomous.** The `agent/` directory contains a fully functional CLI tool that runs the 5-cell pipeline using Claude.
+
+### Quick Start
+
+```bash
+# Install
+pip install -e .
+
+# Set your API key
+export ANTHROPIC_API_KEY="sk-ant-..."
+
+# Run
+syndicate "mechanistic interpretability"
+```
+
+### Usage
+
+```bash
+# Basic query
+syndicate "vision transformers, multimodal models"
+
+# Custom workspace
+syndicate --topic "RL from human feedback" --workspace ./my_runs
+
+# Cron mode (quiet, outputs zine to stdout)
+syndicate --cron --topic "weekly AI digest" > zine.md
+
+# Use Opus for deeper analysis
+syndicate "quantum computing" --model claude-opus-4-1-20250805
+```
+
+### Cron Example
+
+```bash
+# Every Monday at 9am, generate weekly digest
+0 9 * * MON ANTHROPIC_API_KEY=sk-... /usr/local/bin/syndicate --cron "weekly ML digest" >> /var/log/syndicate/zines.md
+```
+
+### Architecture
+
+```
+USER/CRON
+    │
+    ▼
+┌───────────────────────────────────────────┐
+│           SYNDICATE CORE                   │
+│  ┌─────────────────────────────────────┐  │
+│  │         Claude SDK Client           │  │
+│  └─────────────────────────────────────┘  │
+│  ┌─────────────────────────────────────┐  │
+│  │    MCP Tools (arxiv, semantic       │  │
+│  │    scholar, persistence)            │  │
+│  └─────────────────────────────────────┘  │
+└───────────────────────────────────────────┘
+    │
+    ▼
+┌─────────────────────────────────────────────┐
+│              5-CELL PIPELINE                 │
+│  SCANNER → WEAVER → HYPERLEXIC → ARCHITECT  │
+│                    → ORCHESTRA              │
+└─────────────────────────────────────────────┘
+    │
+    ▼
+┌───────────────────────────────────────────┐
+│              OUTPUTS                       │
+│  • THE ZINE (markdown)                    │
+│  • Evidence Pack (JSON)                   │
+│  • Graveyard (SQLite)                     │
+└───────────────────────────────────────────┘
+```
+
+---
+
+## The Website
+
+A cyberpunk landing page showcasing the Syndicate's methodology.
 
 ### Prerequisites
 
@@ -115,7 +192,7 @@ The Arxiv Syndicate is an underground research intelligence network that tracks 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ArxivSynFire.git
+   git clone https://github.com/Darv0n/ArxivSynFire.git
    cd ArxivSynFire
    ```
 
@@ -147,17 +224,29 @@ The Arxiv Syndicate is an underground research intelligence network that tracks 
 
 ```
 ArxivSynFire/
-├── src/
+├── agent/                  # AUTONOMOUS AGENT (NEW)
+│   ├── __init__.py
+│   ├── cli.py              # Command-line interface
+│   ├── pipeline.py         # 5-cell orchestrator
+│   ├── cells.py            # Cell prompts & personalities
+│   ├── tools.py            # MCP tools (arxiv, semantic scholar, etc)
+│   └── requirements.txt
+├── src/                    # WEBSITE
 │   ├── index.html          # Main HTML file
 │   ├── styles.css          # All styles
-│   └── script.js           # Interactivity & animations
-├── assets/
-│   └── (images, icons)
+│   ├── script.js           # Interactivity & animations
+│   └── favicon.svg
 ├── docs/
 │   ├── PIPELINE.md         # Detailed pipeline documentation
 │   ├── CELLS.md            # Cell specifications
 │   ├── PATTERNS.md         # Pattern library reference
 │   └── ZINE_STRUCTURE.md   # Zine output format
+├── workspace/              # Runtime outputs (gitignored)
+│   └── output/
+│       ├── zines/          # Generated zines
+│       └── evidence/       # Evidence packs
+├── pyproject.toml          # Python package config
+├── vercel.json             # Vercel deployment config
 ├── .gitignore
 ├── LICENSE
 ├── README.md

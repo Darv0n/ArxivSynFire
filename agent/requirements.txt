@@ -1,0 +1,3 @@
+# THE ARXIV SYNDICATE - Dependencies
+anthropic>=0.40.0
+python-dotenv>=1.0.0
